@@ -1,0 +1,12 @@
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\bin\Debug\ProjetinhoEscola.exe.config
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\bin\Debug\ProjetinhoEscola.exe
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\bin\Debug\ProjetinhoEscola.pdb
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.csproj.AssemblyReference.cache
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.csproj.SuggestedBindingRedirects.cache
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.Form1.resources
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.Properties.Resources.resources
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.csproj.GenerateResource.cache
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.csproj.CoreCompileInputs.cache
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.exe
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.pdb
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_Login.resources
