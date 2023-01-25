@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace ProjetinhoEscola
 {
-    public partial class Form1 : Form
+    public partial class F_escola : Form
     {
-        public Form1()
+        public F_escola()
         {
             InitializeComponent();
+            F_Login f_login = new F_Login(this);
+            f_login.ShowDialog();
         }
 
         private void logooofToolStripMenuItem_Click(object sender, EventArgs e)
@@ -29,8 +31,19 @@ namespace ProjetinhoEscola
 
         private void logonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            F_Login f_login = new F_Login();
+            F_Login f_login = new F_Login(this);
             f_login.ShowDialog();
+        }
+
+        private void lbuser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_novouser f_novouser = new F_novouser(this);
+            f_novouser.ShowDialog();
         }
     }
 }

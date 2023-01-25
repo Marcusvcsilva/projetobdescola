@@ -34,7 +34,7 @@ namespace ProjetinhoEscola
                 var vcon = ConectarBanco();
                 var cmd = ConectarBanco().CreateCommand();
                 {
-                    cmd.CommandText = "SELECT * FROM tb_usuarios";
+                    cmd.CommandText = "SELECT * FROM tb_usuario";
                     da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                     da.Fill(dt);
                     vcon.Close();
@@ -60,7 +60,7 @@ namespace ProjetinhoEscola
                 var vcon = ConectarBanco();
                 var cmd = ConectarBanco().CreateCommand();
                 {
-                    cmd.CommandText = "SELECT * FROM tb_usuarios";
+                    cmd.CommandText = sql;
                     da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                     da.Fill(dt);
                     vcon.Close();
@@ -73,6 +73,55 @@ namespace ProjetinhoEscola
             }
         }
         // Fim das Funçoes Genéricas
+
+        // Função para F_NovoUser Item 9.2 do Material de Apoio 
+
+        public static void NovoUser(Usuario user)
+        {
+            if (UsernameExiste(user) == true)
+            {
+                MessageBox.Show("Usuario já existe no sistema ");
+                return;
+            }
+            // Rotina para inserção do novo usuário no banco de dados. 
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                // Parametros conforme a tabela do banco de dados 
+                cmd.CommandText = "INSERT INTO tb_usuarios (nome_usuario, username_usuario, senha_usuario, status_usuario, nivel_usuario) VALUES (@nome, @username, @senha, @status, @nivel)";
+
+                cmd.Parameters.AddWithValue("@nome", user.nome_usuario);
+                cmd.Parameters.AddWithValue("@username", user.username_usuario);
+                cmd.Parameters.AddWithValue("@senha", user.senha_usuario);
+                cmd.Parameters.AddWithValue("@status", user.status_usuario);
+                cmd.Parameters.AddWithValue("@nivel", user.nivel_usuario); 
+
+                cmd.ExecuteNonQuery();
+                vcon.Close();
+                MessageBox.Show("Novo usuário adicionado com sucesso");
+
+            }
+                catch(Exception ex)
+            {
+
+                MessageBox.Show("Erro ao inserir novo usuario 
+            }
+            }
+
+        public static bool UsernameExiste(Usuario user)
+        {
+            bool resposta;
+            SQLiteDataAdapter da = null; 
+            DataTable dt = new DataTable();
+
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT username_usuario FROM tb_usuarios WHERE username_usuario='" + user.username_usuario + "'";
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon); 
+            // o Data adaptar abaixo preenche o DataTable com as informaçoes retornadas do banco de dados
+        }
+    
 
         public static void Dml(string sql, string msgOk = null, string msgErro=null) // Data Manipulation Language (INSERT - UPDADE - DELETE)
         { 

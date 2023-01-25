@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbusuario = new System.Windows.Forms.TextBox();
+            this.tb_user = new System.Windows.Forms.TextBox();
             this.lb1 = new System.Windows.Forms.Label();
             this.lb2 = new System.Windows.Forms.Label();
             this.tbsenha = new System.Windows.Forms.TextBox();
@@ -36,12 +36,12 @@
             this.buttoncancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // tbusuario
+            // tb_user
             // 
-            this.tbusuario.Location = new System.Drawing.Point(12, 67);
-            this.tbusuario.Name = "tbusuario";
-            this.tbusuario.Size = new System.Drawing.Size(239, 20);
-            this.tbusuario.TabIndex = 0;
+            this.tb_user.Location = new System.Drawing.Point(12, 67);
+            this.tb_user.Name = "tb_user";
+            this.tb_user.Size = new System.Drawing.Size(239, 20);
+            this.tb_user.TabIndex = 0;
             // 
             // lb1
             // 
@@ -79,6 +79,7 @@
             this.buttonlogin.TabIndex = 4;
             this.buttonlogin.Text = "Login";
             this.buttonlogin.UseVisualStyleBackColor = true;
+            this.buttonlogin.Click += new System.EventHandler(this.buttonlogin_Click);
             // 
             // buttoncancelar
             // 
@@ -88,6 +89,7 @@
             this.buttoncancelar.TabIndex = 5;
             this.buttoncancelar.Text = "Cancelar";
             this.buttoncancelar.UseVisualStyleBackColor = true;
+            this.buttoncancelar.Click += new System.EventHandler(this.buttoncancelar_Click);
             // 
             // F_Login
             // 
@@ -99,13 +101,14 @@
             this.Controls.Add(this.tbsenha);
             this.Controls.Add(this.lb2);
             this.Controls.Add(this.lb1);
-            this.Controls.Add(this.tbusuario);
+            this.Controls.Add(this.tb_user);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "F_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.F_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +116,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbusuario;
+        private System.Windows.Forms.TextBox tb_user;
         private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.Label lb2;
         private System.Windows.Forms.TextBox tbsenha;
