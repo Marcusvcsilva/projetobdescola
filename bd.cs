@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
 using System.Net.NetworkInformation;
+using System.Linq.Expressions;
 
 namespace ProjetinhoEscola
 {
@@ -80,7 +81,7 @@ namespace ProjetinhoEscola
         {
             if (UsernameExiste(user) == true)
             {
-                MessageBox.Show("Usuario já existe no sistema ");
+                MessageBox.Show("Usuario já existe no sistema");
                 return;
             }
             // Rotina para inserção do novo usuário no banco de dados. 
@@ -89,7 +90,7 @@ namespace ProjetinhoEscola
                 var vcon = ConectarBanco();
                 var cmd = vcon.CreateCommand();
                 // Parametros conforme a tabela do banco de dados 
-                cmd.CommandText = "INSERT INTO tb_usuarios (nome_usuario, username_usuario, senha_usuario, status_usuario, nivel_usuario) VALUES (@nome, @username, @senha, @status, @nivel)";
+                cmd.CommandText = "INSERT INTO tb_usuario (nome_usuario, username_usuario, senha_usuario, status_usuario, nivel_usuario) VALUES (@nome, @username, @senha, @status, @nivel)";
 
                 cmd.Parameters.AddWithValue("@nome", user.nome_usuario);
                 cmd.Parameters.AddWithValue("@username", user.username_usuario);
@@ -102,26 +103,87 @@ namespace ProjetinhoEscola
                 MessageBox.Show("Novo usuário adicionado com sucesso");
 
             }
-                catch(Exception ex)
+                catch (Exception ex)
             {
 
-                MessageBox.Show("Erro ao inserir novo usuario 
+                MessageBox.Show("Erro ao inserir novo usuario" + ex.Message);
             }
             }
+
+        public static void NovoCurso(Curso curso)
+        {
+
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            // Parametros a seguir conforme a tabela no banco de dados 
+            cmd.CommandText = "INSERT INTO tb_curso (nome_curso, area_curso, status_curso) VALUES (@nome, @area, @status)";
+
+            cmd.Parameters.AddWithValue("@nome", curso.nome_curso);
+            cmd.Parameters.AddWithValue("@area", curso.area_curso);
+            cmd.Parameters.AddWithValue("@status", curso.status_curso);
+
+            cmd.ExecuteNonQuery();
+            vcon.Close();
+            MessageBox.Show("Novo usuário adicionado com sucesso"); 
+        }
+           
 
         public static bool UsernameExiste(Usuario user)
         {
             bool resposta;
-            SQLiteDataAdapter da = null; 
+            SQLiteDataAdapter da = null;
             DataTable dt = new DataTable();
 
             var vcon = ConectarBanco();
             var cmd = vcon.CreateCommand();
-            cmd.CommandText = "SELECT username_usuario FROM tb_usuarios WHERE username_usuario='" + user.username_usuario + "'";
-            da = new SQLiteDataAdapter(cmd.CommandText, vcon); 
-            // o Data adaptar abaixo preenche o DataTable com as informaçoes retornadas do banco de dados
+            cmd.CommandText = "SELECT username_usuario FROM tb_usuario WHERE username_usuario='" + user.username_usuario + "'";
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            //o Data adapter abaixo preeche o DataTable com as informações retornadas do banco de dados
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+
+
+
+                resposta = true;
+
+            }
+            else
+            {
+
+
+
+                resposta = false;
+            }
+            vcon.Close();
+            return resposta;
+
+        } // Fim do método UsernameExiste
+
+        public static bool CursoExiste(Curso curso)
+        {
+            bool resposta;
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable(); 
+
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            cmd.CommandText = "SELECT nome_curso FROM tb_curso WHERE nome_curso='" + curso.status_curso + "'";
+            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+            da.Fill(dt);
+            if (dt.Rows.Count > 0) 
+            {
+                resposta = true;
+            }
+
+            else
+            {
+                resposta = false;
+            }
+            vcon.Close();
+            return resposta;
         }
-    
+          
 
         public static void Dml(string sql, string msgOk = null, string msgErro=null) // Data Manipulation Language (INSERT - UPDADE - DELETE)
         { 

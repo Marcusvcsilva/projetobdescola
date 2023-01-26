@@ -42,6 +42,7 @@
             this.tb_user.Name = "tb_user";
             this.tb_user.Size = new System.Drawing.Size(239, 20);
             this.tb_user.TabIndex = 0;
+            this.tb_user.Text = "diogo";
             // 
             // lb1
             // 
@@ -69,6 +70,7 @@
             this.tbsenha.PasswordChar = '*';
             this.tbsenha.Size = new System.Drawing.Size(239, 20);
             this.tbsenha.TabIndex = 3;
+            this.tbsenha.Text = "1234";
             this.tbsenha.TextChanged += new System.EventHandler(this.tbsenha_TextChanged);
             // 
             // buttonlogin

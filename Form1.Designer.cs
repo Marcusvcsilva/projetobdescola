@@ -34,6 +34,7 @@
             this.logooofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestãoDeUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.lbUsuario = new System.Windows.Forms.Label();
             this.lbuser = new System.Windows.Forms.Label();
             this.pb_login = new System.Windows.Forms.PictureBox();
-            this.gestãoDeUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_login)).BeginInit();
@@ -105,25 +105,31 @@
             // novoToolStripMenuItem
             // 
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.novoToolStripMenuItem.Text = "Novo";
             this.novoToolStripMenuItem.Click += new System.EventHandler(this.novoToolStripMenuItem_Click);
+            // 
+            // gestãoDeUsuáriosToolStripMenuItem
+            // 
+            this.gestãoDeUsuáriosToolStripMenuItem.Name = "gestãoDeUsuáriosToolStripMenuItem";
+            this.gestãoDeUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.gestãoDeUsuáriosToolStripMenuItem.Text = "Gestão de usuários";
             // 
             // gerenciamentoToolStripMenuItem
             // 
             this.gerenciamentoToolStripMenuItem.Name = "gerenciamentoToolStripMenuItem";
-            this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.gerenciamentoToolStripMenuItem.Text = "Gerenciamento";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 6);
             // 
             // visualizarToolStripMenuItem
             // 
             this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.visualizarToolStripMenuItem.Text = "Visualizar";
             // 
             // alunosToolStripMenuItem
@@ -137,7 +143,7 @@
             // novoAlunoToolStripMenuItem
             // 
             this.novoAlunoToolStripMenuItem.Name = "novoAlunoToolStripMenuItem";
-            this.novoAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoAlunoToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.novoAlunoToolStripMenuItem.Text = "Novo Aluno";
             // 
             // cursosToolStripMenuItem
@@ -152,13 +158,14 @@
             // novoCursoToolStripMenuItem
             // 
             this.novoCursoToolStripMenuItem.Name = "novoCursoToolStripMenuItem";
-            this.novoCursoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.novoCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoCursoToolStripMenuItem.Text = "Novo Curso";
+            this.novoCursoToolStripMenuItem.Click += new System.EventHandler(this.novoCursoToolStripMenuItem_Click);
             // 
             // gerenciarToolStripMenuItem
             // 
             this.gerenciarToolStripMenuItem.Name = "gerenciarToolStripMenuItem";
-            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gerenciarToolStripMenuItem.Text = "Gerenciar";
             // 
             // panel1
@@ -222,12 +229,6 @@
             this.pb_login.TabIndex = 0;
             this.pb_login.TabStop = false;
             this.pb_login.UseWaitCursor = true;
-            // 
-            // gestãoDeUsuáriosToolStripMenuItem
-            // 
-            this.gestãoDeUsuáriosToolStripMenuItem.Name = "gestãoDeUsuáriosToolStripMenuItem";
-            this.gestãoDeUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestãoDeUsuáriosToolStripMenuItem.Text = "Gestão de usuários";
             // 
             // F_escola
             // 

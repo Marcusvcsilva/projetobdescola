@@ -45,5 +45,11 @@ namespace ProjetinhoEscola
             F_novouser f_novouser = new F_novouser(this);
             f_novouser.ShowDialog();
         }
+
+        private void novoCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Curso f_curso = new F_Curso(this);
+            f_curso.ShowDialog();
+        }
     }
 }

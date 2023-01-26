@@ -36,9 +36,9 @@ namespace ProjetinhoEscola
             usuario.username_usuario = tb_user.Text;
             usuario.senha_usuario = tb_senha.Text;
             usuario.status_usuario = cb_status.Text;
-            //usuario.nivel_usuario = (int32)nud_nivel.Value; 
+            usuario.nivel_usuario = (Int32)numupdn_nivel.Value; 
             usuario.nivel_usuario = Convert.ToInt32(Math.Round(numupdn_nivel.Value,0));
-          //bd.NovoUser(usuario);
+            bd.NovoUser(usuario);
 
             // string dados = "Dados .: " + usuario.nome_usuario + " " + 
             // usuario.username_usuario = " "+ usuario.senha_usuario+ " " + usuario.status

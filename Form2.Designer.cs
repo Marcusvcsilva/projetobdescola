@@ -109,6 +109,9 @@
             // cb_status
             // 
             this.cb_status.FormattingEnabled = true;
+            this.cb_status.Items.AddRange(new object[] {
+            "A",
+            "B"});
             this.cb_status.Location = new System.Drawing.Point(15, 231);
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(102, 21);
@@ -117,9 +120,19 @@
             // numupdn_nivel
             // 
             this.numupdn_nivel.Location = new System.Drawing.Point(211, 231);
+            this.numupdn_nivel.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numupdn_nivel.Name = "numupdn_nivel";
             this.numupdn_nivel.Size = new System.Drawing.Size(105, 20);
             this.numupdn_nivel.TabIndex = 8;
+            this.numupdn_nivel.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
             // lb5
             // 

@@ -20,3 +20,4 @@ C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\bin\Debug\System.Data.SQ
 C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.csproj.CopyComplete
 C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_escola.resources
 C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_novouser.resources
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_Curso.resources
