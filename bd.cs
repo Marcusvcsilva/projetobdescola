@@ -124,8 +124,50 @@ namespace ProjetinhoEscola
 
             cmd.ExecuteNonQuery();
             vcon.Close();
-            MessageBox.Show("Novo usuário adicionado com sucesso"); 
-        }
+            MessageBox.Show("Novo curso adicionado com sucesso"); 
+        } // Fim do método novo curso 
+
+        public static void NovoProfessor(Professor professor)
+        {
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            // Parametros a seguir conforme a tabela no banco de dados 
+            cmd.CommandText = "INSERT INTO tb_professor (nome_professor, birthdate_professor, email_professor, telefone_professor, sexo_professor) VALUES (@nome, @birthdate, @email, @telefone, @sexo)";
+                
+            cmd.Parameters.AddWithValue("@nome", professor.nome_professor);
+            cmd.Parameters.AddWithValue("@birthdate", professor.birthdate_professor);
+            cmd.Parameters.AddWithValue("@email", professor.email_professor);
+            cmd.Parameters.AddWithValue("@telefone", professor.telefone_professor);
+            cmd.Parameters.AddWithValue("@sexo", professor.sexo_professor);
+
+            cmd.ExecuteNonQuery();
+            vcon.Close();
+            MessageBox.Show("Novo professor adicionado com sucesso"); 
+        }   //Fim do método professor 
+
+        public static void NovoAluno(Aluno aluno)
+        {
+            var vcon = ConectarBanco();
+            var cmd = vcon.CreateCommand();
+            // Parametros a seguir conforme a tabela no banco de dados
+            cmd.CommandText = "INSERT INTO tb_aluno (nome_aluno, email_aluno, telefone_aluno, cpf_aluno, rg_aluno, sexo_aluno, senha_aluno, cep_aluno, endereco_aluno, numero_aluno) VALUES (@nome, @email, @telefone, @cpf, @rg, @sexo, @senha, @cep, @endereco, @numero)";
+
+            cmd.Parameters.AddWithValue("@nome", aluno.nome_aluno);
+            cmd.Parameters.AddWithValue("@email", aluno.email_aluno);
+            cmd.Parameters.AddWithValue("@telefone", aluno.telefone_aluno);
+            cmd.Parameters.AddWithValue("@cpf", aluno.cpf_aluno);
+            cmd.Parameters.AddWithValue("@rg", aluno.rg_aluno);
+            cmd.Parameters.AddWithValue("@sexo", aluno.sexo_aluno);
+            cmd.Parameters.AddWithValue("@senha", aluno.senha_aluno);
+            cmd.Parameters.AddWithValue("@cep", aluno.cep_aluno);
+            cmd.Parameters.AddWithValue("@endereco", aluno.endereco_aluno);
+            cmd.Parameters.AddWithValue("@numero", aluno.numero_aluno);
+
+            cmd.ExecuteNonQuery();
+            vcon.Close();
+            MessageBox.Show("Novo professor adicionado com sucesso"); 
+            }//Fim do método aluno
+
            
 
         public static bool UsernameExiste(Usuario user)
@@ -159,30 +201,6 @@ namespace ProjetinhoEscola
             return resposta;
 
         } // Fim do método UsernameExiste
-
-        public static bool CursoExiste(Curso curso)
-        {
-            bool resposta;
-            SQLiteDataAdapter da = null;
-            DataTable dt = new DataTable(); 
-
-            var vcon = ConectarBanco();
-            var cmd = vcon.CreateCommand();
-            cmd.CommandText = "SELECT nome_curso FROM tb_curso WHERE nome_curso='" + curso.status_curso + "'";
-            da = new SQLiteDataAdapter(cmd.CommandText, vcon);
-            da.Fill(dt);
-            if (dt.Rows.Count > 0) 
-            {
-                resposta = true;
-            }
-
-            else
-            {
-                resposta = false;
-            }
-            vcon.Close();
-            return resposta;
-        }
           
 
         public static void Dml(string sql, string msgOk = null, string msgErro=null) // Data Manipulation Language (INSERT - UPDADE - DELETE)

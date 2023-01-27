@@ -15,6 +15,6 @@ namespace ProjetinhoEscola
         public string username_usuario;
         public string senha_usuario;
         public string status_usuario;
-        public Int32 nivel_usuario; 
+        public Int32 nivel_usuario;
     }
 }
