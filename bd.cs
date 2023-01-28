@@ -166,9 +166,7 @@ namespace ProjetinhoEscola
             cmd.ExecuteNonQuery();
             vcon.Close();
             MessageBox.Show("Novo professor adicionado com sucesso"); 
-            }//Fim do método aluno
-
-           
+            }//Fim do método aluno   
 
         public static bool UsernameExiste(Usuario user)
         {
@@ -232,6 +230,28 @@ namespace ProjetinhoEscola
             }
 
         }
+
+        public static DataTable ObterUserID()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_usuario as ID, nome_usuario AS Nome FROM tb_usuario";
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                // O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            }
+        }
     }
-}
+
 

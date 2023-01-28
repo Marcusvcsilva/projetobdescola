@@ -43,13 +43,13 @@
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.professoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoProfessorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbnivel = new System.Windows.Forms.Label();
             this.lb2 = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.lbuser = new System.Windows.Forms.Label();
-            this.professoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoProfessorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pb_login = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -123,6 +123,7 @@
             this.gerenciamentoToolStripMenuItem.Name = "gerenciamentoToolStripMenuItem";
             this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gerenciamentoToolStripMenuItem.Text = "Gerenciamento";
+            this.gerenciamentoToolStripMenuItem.Click += new System.EventHandler(this.gerenciamentoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -162,15 +163,30 @@
             // novoCursoToolStripMenuItem
             // 
             this.novoCursoToolStripMenuItem.Name = "novoCursoToolStripMenuItem";
-            this.novoCursoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoCursoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.novoCursoToolStripMenuItem.Text = "Novo Curso";
             this.novoCursoToolStripMenuItem.Click += new System.EventHandler(this.novoCursoToolStripMenuItem_Click);
             // 
             // gerenciarToolStripMenuItem
             // 
             this.gerenciarToolStripMenuItem.Name = "gerenciarToolStripMenuItem";
-            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.gerenciarToolStripMenuItem.Text = "Gerenciar";
+            // 
+            // professoresToolStripMenuItem
+            // 
+            this.professoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novoProfessorToolStripMenuItem});
+            this.professoresToolStripMenuItem.Name = "professoresToolStripMenuItem";
+            this.professoresToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.professoresToolStripMenuItem.Text = "Professores";
+            // 
+            // novoProfessorToolStripMenuItem
+            // 
+            this.novoProfessorToolStripMenuItem.Name = "novoProfessorToolStripMenuItem";
+            this.novoProfessorToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.novoProfessorToolStripMenuItem.Text = "Novo Professor";
+            this.novoProfessorToolStripMenuItem.Click += new System.EventHandler(this.novoProfessorToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -222,21 +238,6 @@
             this.lbuser.TabIndex = 3;
             this.lbuser.Text = "--";
             this.lbuser.Click += new System.EventHandler(this.lbuser_Click);
-            // 
-            // professoresToolStripMenuItem
-            // 
-            this.professoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoProfessorToolStripMenuItem});
-            this.professoresToolStripMenuItem.Name = "professoresToolStripMenuItem";
-            this.professoresToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.professoresToolStripMenuItem.Text = "Professores";
-            // 
-            // novoProfessorToolStripMenuItem
-            // 
-            this.novoProfessorToolStripMenuItem.Name = "novoProfessorToolStripMenuItem";
-            this.novoProfessorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.novoProfessorToolStripMenuItem.Text = "Novo Professor";
-            this.novoProfessorToolStripMenuItem.Click += new System.EventHandler(this.novoProfessorToolStripMenuItem_Click);
             // 
             // pb_login
             // 
