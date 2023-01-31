@@ -12,11 +12,11 @@ namespace ProjetinhoEscola
 {
     public partial class F_novouser : Form
     {
-        F_escola f_novouser;
-        public F_novouser(F_escola f)
+      
+        public F_novouser()
         {
             InitializeComponent();
-            f_novouser = f;
+         
         }
 
         private void F_novouser_Load(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace ProjetinhoEscola
         {
             Usuario usuario = new Usuario();
             usuario.nome_usuario = tb_nome.Text; 
-            usuario.username_usuario = tb_user.Text;
+            usuario.username_usuario = tb_username.Text;
             usuario.senha_usuario = tb_senha.Text;
             usuario.status_usuario = cb_status.Text;
             usuario.nivel_usuario = (Int32)numupdn_nivel.Value; 

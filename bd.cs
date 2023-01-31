@@ -8,6 +8,7 @@ using System.Data.SQLite;
 using System.Windows.Forms;
 using System.Net.NetworkInformation;
 using System.Linq.Expressions;
+using static System.Net.WebRequestMethods;
 
 namespace ProjetinhoEscola
 {
@@ -96,19 +97,19 @@ namespace ProjetinhoEscola
                 cmd.Parameters.AddWithValue("@username", user.username_usuario);
                 cmd.Parameters.AddWithValue("@senha", user.senha_usuario);
                 cmd.Parameters.AddWithValue("@status", user.status_usuario);
-                cmd.Parameters.AddWithValue("@nivel", user.nivel_usuario); 
+                cmd.Parameters.AddWithValue("@nivel", user.nivel_usuario);
 
                 cmd.ExecuteNonQuery();
                 vcon.Close();
                 MessageBox.Show("Novo usuário adicionado com sucesso");
 
             }
-                catch (Exception ex)
+            catch (Exception ex)
             {
 
                 MessageBox.Show("Erro ao inserir novo usuario" + ex.Message);
             }
-            }
+        }
 
         public static void NovoCurso(Curso curso)
         {
@@ -124,7 +125,7 @@ namespace ProjetinhoEscola
 
             cmd.ExecuteNonQuery();
             vcon.Close();
-            MessageBox.Show("Novo curso adicionado com sucesso"); 
+            MessageBox.Show("Novo curso adicionado com sucesso");
         } // Fim do método novo curso 
 
         public static void NovoProfessor(Professor professor)
@@ -133,7 +134,7 @@ namespace ProjetinhoEscola
             var cmd = vcon.CreateCommand();
             // Parametros a seguir conforme a tabela no banco de dados 
             cmd.CommandText = "INSERT INTO tb_professor (nome_professor, birthdate_professor, email_professor, telefone_professor, sexo_professor) VALUES (@nome, @birthdate, @email, @telefone, @sexo)";
-                
+
             cmd.Parameters.AddWithValue("@nome", professor.nome_professor);
             cmd.Parameters.AddWithValue("@birthdate", professor.birthdate_professor);
             cmd.Parameters.AddWithValue("@email", professor.email_professor);
@@ -142,7 +143,7 @@ namespace ProjetinhoEscola
 
             cmd.ExecuteNonQuery();
             vcon.Close();
-            MessageBox.Show("Novo professor adicionado com sucesso"); 
+            MessageBox.Show("Novo professor adicionado com sucesso");
         }   //Fim do método professor 
 
         public static void NovoAluno(Aluno aluno)
@@ -165,8 +166,8 @@ namespace ProjetinhoEscola
 
             cmd.ExecuteNonQuery();
             vcon.Close();
-            MessageBox.Show("Novo professor adicionado com sucesso"); 
-            }//Fim do método aluno   
+            MessageBox.Show("Novo professor adicionado com sucesso");
+        }//Fim do método aluno   
 
         public static bool UsernameExiste(Usuario user)
         {
@@ -199,13 +200,13 @@ namespace ProjetinhoEscola
             return resposta;
 
         } // Fim do método UsernameExiste
-          
 
-        public static void Dml(string sql, string msgOk = null, string msgErro=null) // Data Manipulation Language (INSERT - UPDADE - DELETE)
-        { 
+
+        public static void Dml(string sql, string msgOk = null, string msgErro = null) // Data Manipulation Language (INSERT - UPDADE - DELETE)
         {
-            SQLiteDataAdapter da = null;
-            DataTable dt = new DataTable();
+            {
+                SQLiteDataAdapter da = null;
+                DataTable dt = new DataTable();
 
                 try
                 {
@@ -221,7 +222,7 @@ namespace ProjetinhoEscola
                 }
                 catch (Exception ex)
                 {
-                    if (msgErro != null) {MessageBox.Show(msgErro + " " + ex.Message); }
+                    if (msgErro != null) { MessageBox.Show(msgErro + " " + ex.Message); }
                     throw ex;
 
 
@@ -250,8 +251,91 @@ namespace ProjetinhoEscola
             {
                 throw ex;
             }
+        }
+
+
+        public static DataTable ObterDadosPorId(string id)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT * FROM tb_usuario WHERE id_usuario=" + id;
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                // O data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados. 
+
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public static DataTable AtualizarDados(Usuario usuario)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "UPDATE tb_usuarios SET nome_usuario='" + usuario.nome_usuario + "',username_usuario='" + usuario.username_usuario + "',senha_usuario='" + usuario.senha_usuario + "',status_usuario='" + usuario.status_usuario + "',nivel_usuario=" + usuario.nivel_usuario + " WHERE id_usuario=" + usuario.id_usuario;
+
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                // O data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados. 
+
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+
+
+        }
+
+        public static DataTable RemoverUsuario(string id)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "DELETE FROM tb_usuario WHERE id_usuario=" + id;
+
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                // O data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados. 
+
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+
+
+
+
         }
     }
+}
+
+
+
 
 

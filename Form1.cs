@@ -42,7 +42,7 @@ namespace ProjetinhoEscola
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            F_novouser f_novouser = new F_novouser(this);
+            F_novouser f_novouser = new F_novouser();
             f_novouser.ShowDialog();
         }
 

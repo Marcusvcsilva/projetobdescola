@@ -31,7 +31,7 @@
             this.lb1 = new System.Windows.Forms.Label();
             this.tb_nome = new System.Windows.Forms.TextBox();
             this.lb2 = new System.Windows.Forms.Label();
-            this.tb_user = new System.Windows.Forms.TextBox();
+            this.tb_username = new System.Windows.Forms.TextBox();
             this.lb3 = new System.Windows.Forms.Label();
             this.tb_senha = new System.Windows.Forms.TextBox();
             this.lb4 = new System.Windows.Forms.Label();
@@ -72,12 +72,12 @@
             this.lb2.TabIndex = 2;
             this.lb2.Text = "Username";
             // 
-            // tb_user
+            // tb_username
             // 
-            this.tb_user.Location = new System.Drawing.Point(16, 113);
-            this.tb_user.Name = "tb_user";
-            this.tb_user.Size = new System.Drawing.Size(308, 20);
-            this.tb_user.TabIndex = 3;
+            this.tb_username.Location = new System.Drawing.Point(16, 113);
+            this.tb_username.Name = "tb_username";
+            this.tb_username.Size = new System.Drawing.Size(308, 20);
+            this.tb_username.TabIndex = 3;
             // 
             // lb3
             // 
@@ -199,7 +199,7 @@
             this.Controls.Add(this.lb4);
             this.Controls.Add(this.tb_senha);
             this.Controls.Add(this.lb3);
-            this.Controls.Add(this.tb_user);
+            this.Controls.Add(this.tb_username);
             this.Controls.Add(this.lb2);
             this.Controls.Add(this.tb_nome);
             this.Controls.Add(this.lb1);
@@ -217,7 +217,7 @@
         public System.Windows.Forms.Label lb1;
         public System.Windows.Forms.TextBox tb_nome;
         public System.Windows.Forms.Label lb2;
-        public System.Windows.Forms.TextBox tb_user;
+        public System.Windows.Forms.TextBox tb_username;
         public System.Windows.Forms.Label lb3;
         public System.Windows.Forms.TextBox tb_senha;
         public System.Windows.Forms.Label lb4;
