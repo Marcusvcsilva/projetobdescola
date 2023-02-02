@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjetinhoEscola
 {
-    public partial class F_Gerenciamento : Form
+    public partial class F_GerenciamentoUsuario : Form
     {
         F_escola f_gerenciamento;
         DataTable dt = new DataTable();
-        public F_Gerenciamento(F_escola f)
+        public F_GerenciamentoUsuario(F_escola f)
         {
             InitializeComponent();
             f_gerenciamento = f; 
@@ -22,7 +22,7 @@ namespace ProjetinhoEscola
 
         private void F_Gerenciamento_Load(object sender, EventArgs e)
         {
-            dgv_gerenciamento.DataSource = bd.ObterUserID();
+            dgv_gerenciamento.DataSource = bd.ObterAlunoID();
 
             // Define a largura das colunas do DayaGridView usuario
             dgv_gerenciamento.Columns[0].Width= 40;
@@ -59,14 +59,14 @@ namespace ProjetinhoEscola
 
                 // O dado da coluna indice 0 é o Id do usuário 
                 string userId = dgv.SelectedRows[0].Cells[0].Value.ToString();
-                dt = bd.ObterDadosPorId(userId);
+                dt = bd.ObterUsuarioPorId(userId);
                 
                 tb_id.Text = dt.Rows[0].Field<Int64>("id_usuario").ToString();
                 tb_nome.Text = dt.Rows[0].Field<string>("nome_usuario").ToString();
                 tb_username.Text = dt.Rows[0].Field<string>("username_usuario").ToString(); 
                 tb_senha.Text = dt.Rows[0].Field<string>("senha_usuario").ToString() ;
                 cb_status.Text = dt.Rows[0].Field<string>("status_usuario").ToString();
-                numupdn_nivel.Text = dt.Rows[0].Field<string>("nivel_usuario").ToString(); 
+                numupdn_nivel.Text = dt.Rows[0].Field<Int64>("nivel_usuario").ToString(); 
             }
         }
 
@@ -105,6 +105,21 @@ namespace ProjetinhoEscola
                 // Para evitar carregar o banco de dados novamente podemos atualizar o dgv
                 dgv_gerenciamento.Rows.Remove(dgv_gerenciamento.CurrentRow); 
             }
+        }
+
+        private void bt_fechar_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
+
+        private void bt_limpar_Click(object sender, EventArgs e)
+        {
+            tb_id.Text = "";
+            tb_nome.Text = "";
+            tb_username.Text = "";
+            tb_senha.Text = "";
+            cb_status.Text = "";
+            numupdn_nivel.Text = "";
         }
     }
 }

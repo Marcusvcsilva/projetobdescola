@@ -1,6 +1,6 @@
 ﻿namespace ProjetinhoEscola
 {
-    partial class F_Gerenciamento
+    partial class F_GerenciamentoUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -200,6 +200,7 @@
             this.bt_fechar.TabIndex = 14;
             this.bt_fechar.Text = "Fechar";
             this.bt_fechar.UseVisualStyleBackColor = true;
+            this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
             // 
             // bt_excluir
             // 
@@ -219,6 +220,7 @@
             this.bt_limpar.TabIndex = 14;
             this.bt_limpar.Text = "Limpar";
             this.bt_limpar.UseVisualStyleBackColor = true;
+            this.bt_limpar.Click += new System.EventHandler(this.bt_limpar_Click);
             // 
             // bt_atualizar
             // 
@@ -240,7 +242,7 @@
             this.bt_novo.UseVisualStyleBackColor = true;
             this.bt_novo.Click += new System.EventHandler(this.button1_Click);
             // 
-            // F_Gerenciamento
+            // F_GerenciamentoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -260,7 +262,7 @@
             this.Controls.Add(this.lb_username);
             this.Controls.Add(this.tb_nome);
             this.Controls.Add(this.lb_nome);
-            this.Name = "F_Gerenciamento";
+            this.Name = "F_GerenciamentoUsuario";
             this.Text = "Gerenciamento";
             this.Load += new System.EventHandler(this.F_Gerenciamento_Load);
             this.SizeChanged += new System.EventHandler(this.F_Gerenciamento_SizeChanged);

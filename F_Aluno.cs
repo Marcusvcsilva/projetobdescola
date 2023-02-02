@@ -12,12 +12,11 @@ namespace ProjetinhoEscola
 {
     public partial class F_Aluno : Form
     {
-        F_escola f_aluno;
-        DataTable dt = new DataTable();
-        public F_Aluno(F_escola f)
+        
+        public F_Aluno()
         {
             InitializeComponent();
-            f_aluno = f; 
+            
         }
 
         private void lb_email_Click(object sender, EventArgs e)
@@ -39,14 +38,27 @@ namespace ProjetinhoEscola
             aluno.cpf_aluno= tb_cpf.Text;
             aluno.rg_aluno= tb_rg.Text;
             aluno.sexo_aluno = cb_sexo.Text;
-            aluno.senha_aluno = tb_senha.Text;
             aluno.cep_aluno = tb_cep.Text;
             aluno.endereco_aluno = tb_endereco.Text;
-            aluno.numero_aluno = tb_numero.Text;
             bd.NovoAluno(aluno); 
         }
 
         private void tb_endereco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void F_Aluno_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_senha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_senha_Click(object sender, EventArgs e)
         {
 
         }

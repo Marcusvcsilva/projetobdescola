@@ -151,7 +151,7 @@ namespace ProjetinhoEscola
             var vcon = ConectarBanco();
             var cmd = vcon.CreateCommand();
             // Parametros a seguir conforme a tabela no banco de dados
-            cmd.CommandText = "INSERT INTO tb_aluno (nome_aluno, email_aluno, telefone_aluno, cpf_aluno, rg_aluno, sexo_aluno, senha_aluno, cep_aluno, endereco_aluno, numero_aluno) VALUES (@nome, @email, @telefone, @cpf, @rg, @sexo, @senha, @cep, @endereco, @numero)";
+            cmd.CommandText = "INSERT INTO tb_aluno (nome_aluno, email_aluno, telefone_aluno, cpf_aluno, rg_aluno, sexo_aluno, cep_aluno, endereco_aluno) VALUES (@nome, @email, @telefone, @cpf, @rg, @sexo, @cep, @endereco)";
 
             cmd.Parameters.AddWithValue("@nome", aluno.nome_aluno);
             cmd.Parameters.AddWithValue("@email", aluno.email_aluno);
@@ -159,10 +159,8 @@ namespace ProjetinhoEscola
             cmd.Parameters.AddWithValue("@cpf", aluno.cpf_aluno);
             cmd.Parameters.AddWithValue("@rg", aluno.rg_aluno);
             cmd.Parameters.AddWithValue("@sexo", aluno.sexo_aluno);
-            cmd.Parameters.AddWithValue("@senha", aluno.senha_aluno);
             cmd.Parameters.AddWithValue("@cep", aluno.cep_aluno);
             cmd.Parameters.AddWithValue("@endereco", aluno.endereco_aluno);
-            cmd.Parameters.AddWithValue("@numero", aluno.numero_aluno);
 
             cmd.ExecuteNonQuery();
             vcon.Close();
@@ -253,8 +251,29 @@ namespace ProjetinhoEscola
             }
         }
 
+        public static DataTable ObterAlunoID()
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT id_aluno as ID, nome_aluno AS Nome FROM tb_aluno"; 
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                // O Data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }
+            catch(Exception ex) 
+            {
+                throw ex; 
+            }
+        }
 
-        public static DataTable ObterDadosPorId(string id)
+
+        public static DataTable ObterUsuarioPorId(string id)
         {
             SQLiteDataAdapter da = null;
             DataTable dt = new DataTable();
@@ -277,6 +296,28 @@ namespace ProjetinhoEscola
 
         }
 
+        public static DataTable ObterAlunoPorId(string id) 
+        {
+            SQLiteDataAdapter da = null; 
+            DataTable dt = new DataTable();
+            try
+            {
+                var vcon = ConectarBanco();
+                var cmd = vcon.CreateCommand();
+                cmd.CommandText = "SELECT * FROM tb_aluno WHERE id_aluno=" + id; 
+                da = new SQLiteDataAdapter(cmd.CommandText, vcon);
+                // O data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados. 
+                
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }
+            catch(Exception ex) 
+            {
+                throw ex; 
+            }
+        }
+
         public static DataTable AtualizarDados(Usuario usuario)
         {
             SQLiteDataAdapter da = null;
@@ -285,7 +326,7 @@ namespace ProjetinhoEscola
             {
                 var vcon = ConectarBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "UPDATE tb_usuarios SET nome_usuario='" + usuario.nome_usuario + "',username_usuario='" + usuario.username_usuario + "',senha_usuario='" + usuario.senha_usuario + "',status_usuario='" + usuario.status_usuario + "',nivel_usuario=" + usuario.nivel_usuario + " WHERE id_usuario=" + usuario.id_usuario;
+                cmd.CommandText = "UPDATE tb_usuario SET nome_usuario='" + usuario.nome_usuario + "',username_usuario='" + usuario.username_usuario + "',senha_usuario='" + usuario.senha_usuario + "',status_usuario='" + usuario.status_usuario + "',nivel_usuario=" + usuario.nivel_usuario + " WHERE id_usuario=" + usuario.id_usuario;
 
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 // O data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados. 

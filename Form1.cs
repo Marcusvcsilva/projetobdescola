@@ -10,64 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjetinhoEscola
 {
-    public partial class F_escola : Form
+    public partial class Form1 : Form
     {
-        public F_escola()
+        public Form1()
         {
             InitializeComponent();
-            F_Login f_login = new F_Login(this);
-            f_login.ShowDialog();
-        }
-
-        private void logooofToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logonToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_Login f_login = new F_Login(this);
-            f_login.ShowDialog();
-        }
-
-        private void lbuser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_novouser f_novouser = new F_novouser();
-            f_novouser.ShowDialog();
-        }
-
-        private void novoCursoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_Curso f_curso = new F_Curso(this);
-            f_curso.ShowDialog();
-        }
-
-        private void novoProfessorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_Professor f_professor = new F_Professor(this);
-            f_professor.ShowDialog();
-        }
-
-        private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_Aluno f_aluno = new F_Aluno(this);
-            f_aluno.ShowDialog(); 
-        }
-
-        private void gerenciamentoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_Gerenciamento f_gerenciamento = new F_Gerenciamento(this);
-            f_gerenciamento.ShowDialog(); 
         }
     }
 }

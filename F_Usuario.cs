@@ -46,5 +46,10 @@ namespace ProjetinhoEscola
 
 
         }
+
+        private void bt_limpar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

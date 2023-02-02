@@ -23,4 +23,5 @@ C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEsco
 C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_Curso.resources
 C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_Professor.resources
 C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_Aluno.resources
-C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_Gerenciamento.resources
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_GerenciamentoAluno.resources
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_GerenciamentoUsuario.resources
