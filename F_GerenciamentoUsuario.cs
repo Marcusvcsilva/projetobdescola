@@ -22,7 +22,7 @@ namespace ProjetinhoEscola
 
         private void F_Gerenciamento_Load(object sender, EventArgs e)
         {
-            dgv_gerenciamento.DataSource = bd.ObterAlunoID();
+            dgv_gerenciamento.DataSource = bd.ObterUserID();
 
             // Define a largura das colunas do DayaGridView usuario
             dgv_gerenciamento.Columns[0].Width= 40;

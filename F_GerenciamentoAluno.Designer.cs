@@ -240,7 +240,7 @@
             this.panel1.Controls.Add(this.bt_novo);
             this.panel1.Location = new System.Drawing.Point(12, 412);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 27);
+            this.panel1.Size = new System.Drawing.Size(466, 27);
             this.panel1.TabIndex = 44;
             // 
             // bt_fechar
@@ -297,14 +297,14 @@
             this.dgv_gerenciamentoaluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_gerenciamentoaluno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_gerenciamentoaluno.EnableHeadersVisualStyles = false;
-            this.dgv_gerenciamentoaluno.Location = new System.Drawing.Point(290, 29);
+            this.dgv_gerenciamentoaluno.Location = new System.Drawing.Point(284, 29);
             this.dgv_gerenciamentoaluno.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_gerenciamentoaluno.MultiSelect = false;
             this.dgv_gerenciamentoaluno.Name = "dgv_gerenciamentoaluno";
             this.dgv_gerenciamentoaluno.ReadOnly = true;
             this.dgv_gerenciamentoaluno.RowHeadersVisible = false;
             this.dgv_gerenciamentoaluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_gerenciamentoaluno.Size = new System.Drawing.Size(240, 349);
+            this.dgv_gerenciamentoaluno.Size = new System.Drawing.Size(188, 349);
             this.dgv_gerenciamentoaluno.TabIndex = 45;
             this.dgv_gerenciamentoaluno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_gerenciamentoaluno_CellContentClick);
             this.dgv_gerenciamentoaluno.SelectionChanged += new System.EventHandler(this.dgv_gerenciamentoaluno_SelectionChanged);
@@ -331,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 451);
+            this.ClientSize = new System.Drawing.Size(479, 451);
             this.Controls.Add(this.tb_idcurso);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgv_gerenciamentoaluno);
