@@ -17,6 +17,5 @@ namespace ProjetinhoEscola
         public string sexo_aluno;
         public string cep_aluno;
         public string endereco_aluno;
-        public int id_curso; 
     }
 }

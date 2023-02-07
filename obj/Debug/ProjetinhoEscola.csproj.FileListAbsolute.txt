@@ -25,3 +25,4 @@ C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEsco
 C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_Aluno.resources
 C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_GerenciamentoAluno.resources
 C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_GerenciamentoUsuario.resources
+C:\Users\marcus.vcsilva22\source\repos\ProjetinhoEscola\obj\Debug\ProjetinhoEscola.F_GerenciamentoProfessor.resources

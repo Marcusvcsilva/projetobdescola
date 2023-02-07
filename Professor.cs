@@ -11,6 +11,7 @@ namespace ProjetinhoEscola
     {
         // Conforme registro no banco de dados 
 
+        public Int32 id_professor;
         public string nome_professor;
         public string birthdate_professor;
         public string email_professor;

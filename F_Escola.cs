@@ -80,5 +80,11 @@ namespace ProjetinhoEscola
             F_GerenciamentoAluno f_gerenciamentoaluno = new F_GerenciamentoAluno(this);
             f_gerenciamentoaluno.ShowDialog();
         }
+
+        private void gerenciamentoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            F_GerenciamentoProfessor f_GerenciamentoProfessor = new F_GerenciamentoProfessor(this);
+            f_GerenciamentoProfessor.ShowDialog();
+        }
     }
 }

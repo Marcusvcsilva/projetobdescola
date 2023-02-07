@@ -65,12 +65,66 @@ namespace ProjetinhoEscola
                 cb_sexo.Text = dt.Rows[0].Field<string>("sexo_aluno").ToString();
                 tb_cep.Text = dt.Rows[0].Field<string>("cep_aluno").ToString();
                 tb_endereco.Text = dt.Rows[0].Field<string>("endereco_aluno").ToString();
+
             }
         }
 
         private void dgv_gerenciamentoaluno_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void bt_atualizar_Click(object sender, EventArgs e)
+        {
+            int linha = dgv_gerenciamentoaluno.SelectedRows[0].Index;
+
+            Aluno aluno = new Aluno();
+            aluno.id_aluno = Convert.ToInt32(tb_id.Text);
+            aluno.nome_aluno = tb_nome.Text;
+            aluno.email_aluno = tb_email.Text;
+            aluno.telefone_aluno = tb_telefone.Text;
+            aluno.cpf_aluno = tb_cpf.Text;
+            aluno.rg_aluno = tb_rg.Text;
+            aluno.sexo_aluno = cb_sexo.Text; 
+            aluno.cep_aluno = tb_cep.Text;
+            aluno.endereco_aluno = tb_endereco.Text;
+
+
+            // Invocar o método 
+            bd.AtualizarDadosAluno(aluno);
+
+            //Atualizar o DGV com os dados atuais 
+            // dgv_gerenciamento.DataSource = bd.ObterUserId(); 
+            //Setar a linha selecionada anteriormente 
+            // dgv_usuario.CurrentCell = dgv_usuario[0,linha]; 
+
+            // Outra forma de fazer a mesma coisa sem carregar todos os dados do BD
+
+            dgv_gerenciamentoaluno[1, linha].Value = tb_nome.Text;
+        }
+
+        private void bt_limpar_Click(object sender, EventArgs e)
+        {
+            tb_id.Text = "";
+            tb_nome.Text = "";
+            tb_email.Text = "";
+            tb_telefone.Text = "";
+            tb_cpf.Text = "";
+            tb_rg.Text = "";
+            cb_sexo.Text = "";
+            tb_cep.Text = "";
+            tb_endereco.Text = "";
+        }
+
+        private void bt_excluir_Click(object sender, EventArgs e)
+        {
+            DialogResult resposta = MessageBox.Show("Confirmar Exclusão ?", "Excluir Aluno", MessageBoxButtons.YesNo);
+            if (resposta == DialogResult.Yes)
+            {
+                bd.RemoverAluno(tb_id.Text);
+                // Para evitar carregar o banco de dados novamente podemos atualizar o dgv
+                dgv_gerenciamentoaluno.Rows.Remove(dgv_gerenciamentoaluno.CurrentRow);
+            }
         }
     }
 }

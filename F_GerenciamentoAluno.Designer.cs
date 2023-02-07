@@ -261,6 +261,7 @@
             this.bt_excluir.TabIndex = 14;
             this.bt_excluir.Text = "Excluir";
             this.bt_excluir.UseVisualStyleBackColor = true;
+            this.bt_excluir.Click += new System.EventHandler(this.bt_excluir_Click);
             // 
             // bt_limpar
             // 
@@ -270,6 +271,7 @@
             this.bt_limpar.TabIndex = 14;
             this.bt_limpar.Text = "Limpar";
             this.bt_limpar.UseVisualStyleBackColor = true;
+            this.bt_limpar.Click += new System.EventHandler(this.bt_limpar_Click);
             // 
             // bt_atualizar
             // 
@@ -279,6 +281,7 @@
             this.bt_atualizar.TabIndex = 1;
             this.bt_atualizar.Text = "Atualizar";
             this.bt_atualizar.UseVisualStyleBackColor = true;
+            this.bt_atualizar.Click += new System.EventHandler(this.bt_atualizar_Click);
             // 
             // bt_novo
             // 
@@ -386,7 +389,6 @@
         public System.Windows.Forms.Label lb_email;
         public System.Windows.Forms.TextBox tb_nome;
         public System.Windows.Forms.Label lb_nome;
-        private System.Windows.Forms.TextBox tb_id;
         public System.Windows.Forms.Label lb_id;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button bt_fechar;
@@ -395,7 +397,8 @@
         private System.Windows.Forms.Button bt_atualizar;
         private System.Windows.Forms.Button bt_novo;
         private System.Windows.Forms.DataGridView dgv_gerenciamentoaluno;
-        private System.Windows.Forms.TextBox tb_idcurso;
         public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox tb_id;
+        public System.Windows.Forms.TextBox tb_idcurso;
     }
 }
