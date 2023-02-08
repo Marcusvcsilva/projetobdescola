@@ -263,7 +263,7 @@
             this.Controls.Add(this.tb_nome);
             this.Controls.Add(this.lb_nome);
             this.Name = "F_GerenciamentoUsuario";
-            this.Text = "Gerenciamento";
+            this.Text = "Gerenciamento de Usuário";
             this.Load += new System.EventHandler(this.F_Gerenciamento_Load);
             this.SizeChanged += new System.EventHandler(this.F_Gerenciamento_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.numupdn_nivel)).EndInit();

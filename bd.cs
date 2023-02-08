@@ -393,7 +393,7 @@ namespace ProjetinhoEscola
             {
                 var vcon = ConectarBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "UPDATE tb_aluno SET nome_aluno='" + aluno.nome_aluno + "',email_aluno='" + aluno.email_aluno + "',telefone_aluno='" + aluno.telefone_aluno + "',cpf_aluno='" + aluno.cpf_aluno + "',rg_aluno='" + aluno.rg_aluno + "',sexo_aluno='" + aluno.sexo_aluno + "',cep_aluno='" + aluno.cep_aluno + "',endereco_aluno='" + aluno.endereco_aluno + " WHERE id_aluno=" + aluno.id_aluno;
+                cmd.CommandText = "UPDATE tb_aluno SET nome_aluno='" + aluno.nome_aluno + "',email_aluno='" + aluno.email_aluno + "',telefone_aluno='" + aluno.telefone_aluno + "',cpf_aluno='" + aluno.cpf_aluno + "',rg_aluno='" + aluno.rg_aluno + "',sexo_aluno='" + aluno.sexo_aluno + "',cep_aluno='" + aluno.cep_aluno + "',endereco_aluno='" + aluno.endereco_aluno + "' WHERE id_aluno=" + aluno.id_aluno;
 
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 // O data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados. 
@@ -420,7 +420,7 @@ namespace ProjetinhoEscola
             {
                 var vcon = ConectarBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "UPDATE tb_professor SET nome_professor='" + professor.nome_professor + "',birthdate_professor='" + professor.birthdate_professor + "',email_professor='" + professor.email_professor + "',telefone_professor='" + professor.telefone_professor + "',sexo_professor='" + professor.sexo_professor + " WHERE id_professor=" + professor.id_professor;
+                cmd.CommandText = "UPDATE tb_professor SET nome_professor='" + professor.nome_professor + "',birthdate_professor='" + professor.birthdate_professor + "',email_professor='" + professor.email_professor + "',telefone_professor='" + professor.telefone_professor + "',sexo_professor='" + professor.sexo_professor + "' WHERE id_professor=" + professor.id_professor;
 
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 // O data adapter abaixo preenche o DataTable com as informações retornadas do banco de dados. 
